@@ -1,0 +1,168 @@
+/* =====================================================
+   AURUM MEL – Landing Page styles (lightweight, high-performance)
+   ===================================================== */
+
+:root {
+  --black: #111111;
+  --gold:  #D4AF37;
+  --cream: #F5F5F5;
+  --ease:  cubic-bezier(.25,.8,.25,1);
+}
+
+/* Reset */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:100%;}
+body{
+  font-family:'Montserrat',sans-serif;
+  color:var(--cream);
+  background:var(--black);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img,video{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+button{border:none;background:none;font:inherit;cursor:pointer;}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Utilities */
+.btn{
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:.9rem 2rem;
+  letter-spacing:.08em;
+  transition:background .3s var(--ease),color .3s var(--ease);
+  border-radius: 2px;
+}
+.btn:hover,.btn:focus{background:var(--gold);color:var(--black);}
+
+.fade-section{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease);} 
+.fade-section.visible{opacity:1;transform:none;}
+
+/* Header / Cart */
+.cart-container{position:fixed;top:1rem;right:1rem;z-index:30;}
+.cart-btn{position:relative;padding:.4rem;color:var(--gold);border-radius:50%;transition:background .2s var(--ease);}
+.cart-btn:hover,.cart-btn:focus{background:rgba(212,175,55,0.1);}
+.cart-count{
+  position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;
+  background:var(--gold);color:var(--black);
+  border-radius:50%;font-size:.75rem;display:flex;align-items:center;justify-content:center;
+  transition:transform .2s var(--ease);
+}
+.cart-bump{transform:scale(1.3);} /* animation helper */
+
+/* HERO */
+.hero{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;z-index:1;}
+.hero__bg{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background:url('assets/pexels-ionelceban-3194327.jpg');
+  background-size:cover;background-position:center;
+  will-change:transform;
+  transform:translateZ(0);
+}
+
+.hero__bg::after{
+  content:'';
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.95) 100%);
+  z-index:1;
+} 
+.hero__overlay{position:relative;text-align:center;z-index:2;padding:0 1rem;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;}
+.hero__title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4rem);letter-spacing:.12em;display:flex;align-items:center;justify-content:center;gap:0.25rem;flex-wrap:wrap;margin-bottom:0;}
+.hero__bee-icon{width:clamp(12rem,24vw,18rem);height:clamp(12rem,24vw,18rem);object-fit:contain;vertical-align:middle;filter:brightness(1.3) contrast(1.4) drop-shadow(0 0 10px rgba(212,175,55,0.3));margin:0 -3rem 0 -4rem;}
+
+.hero__subtitle{font-size:1rem;font-weight:300;letter-spacing:.15em;margin:-3rem 0 0;text-align:center;position:relative;top:-2rem;transform:translateX(1.5rem);}
+.hero__scroll{color:var(--gold);border:none;padding:.4rem 1rem;transition:background .3s var(--ease),color .3s var(--ease);position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:1000;opacity:1;visibility:visible;display:flex;align-items:center;gap:0.5rem;font-size:0.9rem;} 
+.hero__scroll:hover,.hero__scroll:focus{background:transparent;color:rgba(212,175,55,0.7);} 
+
+/* PHILOSOPHY */
+.philosophy{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:6rem 8vw;max-width:1400px;margin:0 auto;position:relative;z-index:2;}
+.philosophy__img{
+  width:100%;height:500px;
+  background:linear-gradient(45deg, #2c1810, #1a0f0a);
+  background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><radialGradient id="bee" cx="50%" cy="50%"><stop offset="0%" stop-color="%23D4AF37" stop-opacity="0.3"/><stop offset="100%" stop-color="%23000000" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="%231a0f0a"/><circle cx="200" cy="150" r="80" fill="url(%23bee)"/><circle cx="120" cy="100" r="20" fill="%23D4AF37" opacity="0.6"/><circle cx="280" cy="200" r="15" fill="%23D4AF37" opacity="0.4"/></svg>');
+  background-size:cover;background-position:center;border-radius:8px;
+}
+.philosophy__text h2{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold);margin-bottom:1.5rem;}
+.philosophy__text p{font-size:1.1rem;opacity:.9;}
+
+/* PRODUCTS */
+.products{padding:6rem 0;}
+.products__wrapper{display:flex;gap:4rem;overflow-x:auto;padding:0 8vw;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+.product-card{flex:0 0 80%;max-width:380px;background:#1a1a1a;border:1px solid #222;border-radius:6px;scroll-snap-align:center;padding:2rem;text-align:center;transition:transform .3s var(--ease);} 
+.product-card .product-img{
+  height:300px;width:100%;border-radius:4px;margin-bottom:1.5rem;
+  background:linear-gradient(135deg, #2c1810, #1a0f0a);
+  background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><defs><linearGradient id="jar" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23D4AF37" stop-opacity="0.2"/><stop offset="100%" stop-color="%23000000" stop-opacity="0"/></linearGradient></defs><rect width="100%" height="100%" fill="%231a0f0a"/><ellipse cx="150" cy="120" rx="60" ry="80" fill="url(%23jar)" stroke="%23D4AF37" stroke-width="2"/><rect x="140" y="200" width="20" height="40" fill="%23D4AF37" opacity="0.3"/></svg>');
+  background-size:cover;background-position:center;
+}
+
+/* Imagen real para el producto de Roble Centenario */
+.product-card[data-id="roble"] .product-img{
+  background:url('assets/roble_centenario_fondo.png');
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+}
+.product-card h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold);margin-bottom:.75rem;}
+.product-card .note{font-size:.9rem;font-style:italic;opacity:.8;margin-bottom:1.5rem;}
+.product-card:hover{transform:translateY(-6px);} 
+
+/* ORIGIN */
+.origin{position:relative;height:80vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 1rem;text-align:center;}
+.origin__bg{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background:linear-gradient(45deg, #1a0f0a, #0a0503);
+  background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><defs><radialGradient id="hands" cx="50%" cy="50%"><stop offset="0%" stop-color="%23D4AF37" stop-opacity="0.1"/><stop offset="100%" stop-color="%23000000" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="%230a0503"/><circle cx="400" cy="300" r="150" fill="url(%23hands)"/><path d="M350 250 Q400 200 450 250 L430 280 Q400 300 370 280 Z" fill="%23D4AF37" opacity="0.3"/><path d="M370 320 Q400 350 430 320 L410 290 Q400 280 390 290 Z" fill="%23D4AF37" opacity="0.3"/></svg>');
+  background-size:cover;background-position:center;filter:grayscale(1) contrast(1.15);
+}
+.origin blockquote{position:relative;max-width:700px;font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,2rem);line-height:1.4;font-style:italic;z-index:2;color:var(--cream);background:rgba(17,17,17,.75);padding:2rem;border-left:3px solid var(--gold);} 
+.origin cite{display:block;font-size:.9rem;color:var(--gold);margin-top:1rem;font-style:normal;letter-spacing:.1em;}
+
+/* CTA FINAL */
+.final-cta{padding:6rem 1rem;text-align:center;}
+.final-cta h2{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold);margin-bottom:1.5rem;}
+.final-cta p{max-width:700px;margin:0 auto 2.5rem;font-size:1.1rem;opacity:.9;}
+
+/* MEDIA QUERIES */
+@media(max-width:900px){
+ .philosophy{grid-template-columns:1fr;gap:2rem;padding:4rem 6vw;}
+ .products__wrapper{flex-direction:column;align-items:center;}
+ .product-card{flex:0 0 auto;width:100%;max-width:440px;}
+}
+
+@media(max-width:600px){
+ .hero__subtitle{font-size:.9rem;}
+ .philosophy__text h2{font-size:2rem;}
+ .final-cta h2{font-size:2rem;}
+}
+
+/* Print styles for better SEO */
+@media print {
+  .cart-container,
+  .hero__scroll,
+  .btn { display: none !important; }
+  
+  .hero { height: auto; min-height: 50vh; }
+  .origin { height: auto; min-height: 40vh; }
+  
+  body { color: #000; background: #fff; }
+  .hero__title, .philosophy__text h2, .product-card h3, .final-cta h2 { color: #000; }
+}

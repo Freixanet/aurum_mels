@@ -1,0 +1,43 @@
+ARCHIVOS MULTIMEDIA REQUERIDOS PARA AURUM MEL
+===============================================
+
+Esta carpeta debe contener los siguientes archivos para que la landing page funcione correctamente:
+
+1. honey-video.mp4
+   - Video de fondo en 4K (3840x2160)
+   - Duración: 10-15 segundos en bucle
+   - Contenido: Miel dorada cayendo en cámara súper lenta sobre pizarra negra
+   - Estilo: Iluminación dramática, sin sonido
+   - Formato: MP4 optimizado para web
+
+2. bee-macro.jpg
+   - Foto macro de abeja sobre flor de romero
+   - Resolución mínima: 1920x1080px
+   - Estilo: Fotografía profesional, enfoque selectivo
+   - Formato: JPG optimizado
+
+3. honey-romero.jpg
+   - Tarro de miel de romero salvaje
+   - Diseño minimalista (cristal oscuro, etiqueta dorada)
+   - Resolución mínima: 800x1000px
+   - Formato: JPG optimizado
+
+4. honey-roble.jpg
+   - Tarro de miel de roble centenario
+   - Diseño minimalista (cristal oscuro, etiqueta dorada)
+   - Resolución mínima: 800x1000px
+   - Formato: JPG optimizado
+
+5. apicultor-hands.jpg
+   - Manos del apicultor sosteniendo panal
+   - Blanco y negro, enfoque artístico
+   - Resolución mínima: 1920x1080px
+   - Formato: JPG optimizado
+
+NOTAS IMPORTANTES:
+- Todas las imágenes deben ser de alta calidad profesional
+- El video debe ser optimizado para web (tamaño máximo 10MB)
+- Los archivos deben tener exactamente estos nombres
+- Formato recomendado: JPG para imágenes, MP4 para video
+
+SIN ESTOS ARCHIVOS, LA LANDING PAGE MOSTRARÁ ESPACIOS VACÍOS EN LUGAR DE LAS IMÁGENES Y VIDEO. 

@@ -1,0 +1,33 @@
+{
+  "name": "aurum-mel-landing",
+  "version": "1.0.0",
+  "description": "Landing page de alta costura para AURUM MEL - El Alma de la Colmena",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static site'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "landing-page",
+    "luxury",
+    "honey",
+    "premium",
+    "minimalist",
+    "responsive"
+  ],
+  "author": "AURUM MEL Team",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/aurum-mel-landing.git"
+  },
+  "homepage": "https://aurum-mel.com",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
